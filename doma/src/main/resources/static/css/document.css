@@ -1,0 +1,62 @@
+body{
+    /* background-color: #f0f0f0; */
+    background-attachment: fixed;
+}
+.main-content{
+    width:100%;
+    height:93vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 7vh;
+}
+.show-text{
+    width:80%;
+    margin:5vh 0% 0 10%;
+    padding:0 5%;
+    background-color: white;
+}
+#editor{
+    position: absolute;
+    left:10%;
+    top:14vh;
+    margin:0vh auto;
+    width:80% !important;
+    height:60vh !important;
+    z-index: 5 !important;
+}
+.alert{
+    position: fixed;
+    top:7vh;
+    left:0;
+    width:20%;
+    z-index: 99;
+}
+.revise-text{
+    position: absolute;
+    left:2%;
+    top:10vh;
+}
+.fixed-nav{
+    position:fixed;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    left:1%;
+    top:25vh;
+    border-radius:25px;
+    width:8%;
+    height:auto;
+    padding:1%;
+    border:1px solid darkgray;
+    background-color: white;
+    overflow: hidden;
+}
+.fixed-nav button{
+    margin-top:10%;
+}

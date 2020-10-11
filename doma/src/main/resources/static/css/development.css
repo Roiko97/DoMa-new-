@@ -1,0 +1,139 @@
+body {
+    background-color: #f0f0f0;
+    background-attachment: fixed;
+}
+
+
+.main-content {
+    width: 100%;
+    height: auto;
+    margin-top: 7vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+}
+
+.content {
+    height: auto;
+    margin-top:10vh;
+    width:55%;
+}
+.item-info{
+    width:50%;
+    margin-left:25%;
+    height: 65vh;
+    padding:1% 4%;
+    border:1px solid rgba(12, 20, 46, 0.322);
+    background-color: white;
+    -webkit-box-shadow: #8888 0px 20px 10px;
+            box-shadow: #8888 0px 20px 10px;
+}
+.item-title{
+    color:rgb(238, 147, 43);
+}
+.item-body{
+    height:70%;
+    border-top:1px solid rgb(73, 73, 73);
+    border-bottom:1px solid rgb(73, 73, 73);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.tap{
+    color: rgb(23, 29, 39);
+    padding:1% 8;
+    margin-top:5vh;
+    text-align: center;
+}
+/*学生列表*/
+.content-content {
+    background-color: rgb(255, 255, 255);
+    width: 40%;
+    height:65vh;
+    margin-top:10vh;
+    border-radius: 10px;
+    margin-right:5%;
+}
+.form-list{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+.create-form{
+    width: 96%;
+    overflow: hidden;
+    padding:0 1%;
+    margin:1%;
+}
+.inset-form{
+    width: 96%;
+    overflow: hidden;
+    padding:0 1%;
+    margin:1%;
+}
+.group-title,
+.group-info {
+    color: rgb(73, 84, 105);
+    margin-left: 2%;
+}
+.group-title{
+    padding-top:2%;
+}
+
+.list-group {
+    width: 96%;
+    margin:1%;
+    padding:0 1%;
+    height: 25vh;
+    overflow-y: scroll;
+    color: rgb(73, 84, 105);
+}
+.table {
+    width: 100%;
+    background-color: rgb(226, 226, 226);
+    color:black;
+}
+.text-tip{
+    color:white;
+}
+#day-number{
+    margin:1%;
+    padding:0 1%;
+    color: rgb(73, 84, 105);
+}
+/*提示框*/
+.alert{
+    position: absolute;
+    width:30%;
+}
+/*轮播*/
+.carousel-control.left {
+    background-image: none;
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1)
+}
+
+.carousel-control.right {
+    left: auto;
+    right: 0;
+    background-image: none;
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1)
+}
+.carousel-control{
+    color:black;
+}
+.carousel-caption{
+    color: rgb(27, 36, 46);
+}
+.carousel-indicators li{
+    background-color: rgb(238, 147, 43);
+}

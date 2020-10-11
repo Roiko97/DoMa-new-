@@ -1,0 +1,36 @@
+-------------------------------------------------------------------------------
+Test set: com.scholat.doma.MyTests
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 1, Errors: 2, Skipped: 0, Time elapsed: 0.889 s <<< FAILURE! - in com.scholat.doma.MyTests
+Test01  Time elapsed: 0.767 s  <<< ERROR!
+org.springframework.jdbc.BadSqlGrammarException: 
+
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'doma.teammember' doesn't exist
+### The error may exist in file [E:\doma\target\classes\mapper\TeamDao.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT DISTINCT u.user_name,u.user_id         FROM doma.teams t,doma.users u,doma.teammember tm         WHERE u.user_id = tm.user_id AND tm.team_id = t.team_id AND t.team_id = ?
+### Cause: java.sql.SQLSyntaxErrorException: Table 'doma.teammember' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'doma.teammember' doesn't exist
+	at com.scholat.doma.MyTests.Test01(MyTests.java:74)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'doma.teammember' doesn't exist
+	at com.scholat.doma.MyTests.Test01(MyTests.java:74)
+
+test02  Time elapsed: 0.005 s  <<< ERROR!
+org.springframework.jdbc.BadSqlGrammarException: 
+
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'doma.teammember' doesn't exist
+### The error may exist in file [E:\doma\target\classes\mapper\TeamDao.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT DISTINCT u.user_name,u.user_id         FROM doma.teams t,doma.users u,doma.teammember tm         WHERE u.user_id = tm.user_id AND tm.team_id = t.team_id AND t.team_id = ?
+### Cause: java.sql.SQLSyntaxErrorException: Table 'doma.teammember' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'doma.teammember' doesn't exist
+	at com.scholat.doma.MyTests.test02(MyTests.java:98)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'doma.teammember' doesn't exist
+	at com.scholat.doma.MyTests.test02(MyTests.java:98)
+
+Test  Time elapsed: 0.097 s  <<< FAILURE!
+java.lang.AssertionError: No ModelAndView found
+	at com.scholat.doma.MyTests.Test(MyTests.java:63)
+

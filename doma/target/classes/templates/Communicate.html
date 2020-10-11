@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>开发交流</title>
+    <link rel="shortcut icon" href="src/favicon.ico">
+    <link href="css/bootstrap.css?v=3.3.6" rel="stylesheet">
+    <link href="css/nav.css" rel="stylesheet">
+    <link href="css/document.css" rel="stylesheet">
+    <link href="css/communicate.css" rel="stylesheet">
+    <link rel="stylesheet" href="editor/css/editormd.css" />
+    <link rel="stylesheet" href="editor/css/editormd.preview.min.css" />
+    <link href="editor/css/nav.css" rel="stylesheet">
+    <link href="editor/css/testUnit.css" rel="stylesheet">
+    <script src="editor/js/jquery.min.js"></script>
+    <script src="editor/js/bootstrap.min.js"></script>
+    <script src="editor/js/jquery.min.js"></script>
+    <script src="editor/js/editormd.min.js"></script>
+    <script src="editor/lib/prettify.min.js"></script>
+    <script src="editor/lib/marked.min.js"></script>
+    <script src="js/modula.js"></script>
+</head>
+
+<body>
+    <!--右侧内容开始-->
+    <div class="main" id="main">
+        <div class="flex-banner">
+            <div class="btn-group">
+                <a href="/Development"><button class="btn btn-default" ><span
+                        class="glyphicon glyphicon-arrow-up"></span></button></a>
+                <button class="btn btn-default" ><span
+                        class="glyphicon glyphicon-arrow-down"></span></button>
+            </div>
+        </div>
+        <nav class="nav-top"><button class="btn btn-info btn-bg pull-left nav-btn" onclick="navStatus()"><span
+                    class="glyphicon glyphicon-th-list"></span>导航</button><select class="title-select hidden"
+                onchange="amendTeam(this)">
+            </select>
+            <div class="pull-right nav-top-right"><a class="btn" onclick="showInfo()"><span
+                        class="glyphicon glyphicon-user"></span></a>
+            </div>
+        </nav>
+        <nav class="navbar-left hidden" role="navigation">
+            <div class="left-nav">
+                <ul class="nav">
+                    <hr>
+                    <li><span class="glyphicon glyphicon-home"></span><a href="/Summarize"
+                    >主页</a></li>
+                    <br>
+                    <li><span class="glyphicon glyphicon-console"></span><a href="/Development"
+                    >开发模式</a></li>
+                    <br>
+                    <li><span class="glyphicon glyphicon-console"></span><a href="/Communicate"
+                    >交流开发</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="content-main ">
+
+            <div class="content-header">
+                 <div id="toolbar" style="float: right;margin-right:10px;margin-bottom: 10px">
+                    <div class="btn btn-success" data-toggle="modal" data-target="#addModal">添加论文</div>
+                </div>
+<!--                <table class="table table-hover"></table>-->
+                <table class="table table-hover">
+                    <tr>
+                        <th class="col-lg-2">论文类型</th>
+                        <th class="col-lg-5">论文题目</th>
+                        <th class="col-lg-2">发布人</th>
+                        <th class="col-lg-3" style="padding-left: 50px">论文操作</th>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-2">知识图谱</td>
+                        <td class="col-lg-5"><a onclick="downloadthis(this)">知识抽取</a></td>
+                        <td class="col-lg-2">房小腻</td>
+                        <td class="col-lg-3 btn-group">
+                            <button type="button" id="btnQanda" class="btn btn-primary  btn-sm" data-toggle="modal" data-target="#QandA">
+                                Q&A
+                            </button>
+                            <button type="button" id="btnNote" class="btn btn-warning  btn-sm" data-toggle="modal" data-target="#Note">
+                                Note
+                            </button>
+                            <button type="button" class="btn btn-danger  btn-sm" data-toggle="modal" data-target="#myModal">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+<!--                添加论文-->
+                <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header bg-primary">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel-1">添加论文</h4>
+                            </div>
+                            <form class="form-group" onsubmit="return false">
+                                <div class="row modal-form-group">
+<!--                                    <div class="col-md-10 col-md-offset-1" style="margin-top: 10px">-->
+<!--                                        <div class="input-group">-->
+<!--                                            <span class="input-group-addon"><label for="title" class="control-label">论文类型</label></span>-->
+<!--                                            <input class="form-control" type="text" id="title" name="title" placeholder="请输入论文类型" maxlength="50" required="required">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                    <div class="col-md-10 col-md-offset-1" style="margin-top: 10px">
+                                        <div class="input-group ">
+                                            <span class="input-group-addon"><label class="control-label">论文题目</label> </span>
+                                            <input  class="form-control " required="required" type="file" id="file"  style="float: right">
+                                        </div>
+                                    </div>
+<!--                                    <div class="col-md-10 col-md-offset-1"  style="margin-top: 10px">-->
+<!--                                        <div class="input-group">-->
+<!--                                          <span class="input-group-addon"><label for="name"-->
+<!--                                                                       class="control-label">发布人</label></span>-->
+<!--                                            <input class="form-control" type="text" id="name" name="name" placeholder="请输入发布人姓名"-->
+<!--                                                   maxlength="50" required="required">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default btn" data-dismiss="modal">关闭</button>
+                                    <button type="submit" class="btn btn-success btn" data-loading-text="发送中..."
+                                            onclick="sendTest(this)">提交</button>
+                                </div>
+                            </form>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+
+<!--                Q&A-->
+                <div class="modal fade" id="QandA" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-2" aria-hidden="true" >
+                    <div class="modal-dialog"  style="width: 1500px">
+                        <div  class="modal-content" style="height: 840px">
+                            <div class="modal-header bg-primary">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel-2">Q&A</h4>
+                            </div>
+                            <form class="form-group" onsubmit="return false">
+                                <div class="row modal-form-group" style="position: relative;">
+                                    <div class="col-md-10 col-md-offset-1" style="margin-top: 10px">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><label  class="control-label">发布人</label></span>
+                                            <input class="form-control" type="text" maxlength="50" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="content1-main" >
+                                        <div class="list-project" >
+<!--                                            <div class="item1 hidden">-->
+<!--                                                <div class="tip">&nbsp;</div>-->
+<!--                                            </div>-->
+                                            <div id="test-editormd" >
+                                                <textarea id="content" name="content" style="display:none;"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+<!--                                    <div class="col-md-10 col-md-offset-1" style="margin-top: 10px">-->
+<!--                                        <div class="input-group">-->
+<!--                                            <span class="input-group-addon"><label  class="control-label">Question</label></span>-->
+<!--                                            <input class="form-control" type="text" maxlength="50" required="required">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-md-12"  style="position: absolute">-->
+<!--                                        <div>-->
+<!--                                            <script id="editor" class="editor" type="text/plain" ></script>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                </div>
+                                <div style="position: absolute;bottom: 10px;right: 10px">
+                                    <button type="button" class="btn btn-default btn" data-dismiss="modal">关闭</button>
+                                    <button type="submit" class="btn btn-success btn" data-loading-text="发送中..."
+                                            onclick="sendTest(this)">提交</button>
+                                </div>
+                            </form>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+
+<!--                Note-->
+
+
+                <div class="modal fade" id="Note" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-3">
+                    <div class="modal-dialog" role="document" style="width: 1500px">
+                        <div class="modal-content" style="height: 840px">
+                            <div class="modal-header bg-primary">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel-3">Note</h4>
+                            </div>
+                            <div class="content1-main" >
+                                <div class="list-project" >
+                                    <!--                                            <div class="item1 hidden">-->
+                                    <!--                                                <div class="tip">&nbsp;</div>-->
+                                    <!--                                            </div>-->
+                                    <div id="test-editormd2" >
+                                        <textarea id="content2" name="content2" style="display:none;"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <ul class="text-center pager">
+            <li class="btn btn-default btn-lg" onclick="previous()">上一页</li>
+            <li class="btn btn-default btn-lg" onclick="next()">下一页</li>
+        </ul>
+    </div>
+    <!--右侧内容结束-->
+<!--    <script src="http://localhost:8088/coordination/static/js/nav.js"></script>-->
+    <script src="js/nav.js"></script>
+    <script src="js/communicate.js"></script>
+    <script type="text/javascript">
+        var user=getCookie();
+        if (user!=undefined)
+        {
+            function loadEditor(id,func,timeout) {
+                var timeOutEvent;
+                document.querySelector('#'+id).addEventListener('click',function (e) {
+                    clearTimeout(timeOutEvent);
+                    timeOutEvent=setTimeout(function () {
+                        func()
+                    },timeout)
+                })
+            }
+            loadEditor('btnQanda',function () {
+                let testEditor;
+                testEditor = editormd("test-editormd", {
+                    width: "98%",
+                    height: 750,
+                    syncScrolling: "single",
+                    path: "editor/lib/", //依赖lib文件夹路径
+                    emoji: false,
+                    taskList: false,
+                    tocm: false,
+                    imageUpload: true,
+                    imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+                    imageUploadURL: "imageUpload"
+                })
+            },750)
+
+            loadEditor('btnNote',function () {
+                let testEditor2;
+                testEditor2 = editormd("test-editormd2", {
+                    width   : "98%",
+                    height  : 750,
+                    syncScrolling : "single",
+                    path    : "editor/lib/", //依赖lib文件夹路径
+                    emoji : false,
+                    taskList : false,
+                    tocm     : false,
+                    imageUpload: true,
+                    imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+                    imageUploadURL: "imageUpload"
+                })
+            },750)
+
+            // window.onload = function () {
+            //     // $.ajax({
+            //     //     type: 'post',
+            //     //     url: "/msg/getmsg",
+            //     //     dataType: 'json',
+            //     //     data: {
+            //     //     },
+            //     //     success: function (response) {
+            //     //         var result = response.msg;
+            //     //         var data = response.data[0];
+            //     //         console.log(response);
+            //     //         console.log("data = "+data);
+            //     //         if(result =="OK"){
+            //     //             testEditor.setSelection({line:0, ch:0}, {line:100000, ch:0});
+            //     //             testEditor.replaceSelection(data);
+            //     //             window.alert("数据加载成功")
+            //     //         }
+            //     //         else
+            //     //             console.log("error");
+            //     //     }
+            //     // })
+            // }
+            // $(document).ready(function() {
+            //     $('#submit_btn').click(function () {
+            //         var obj;
+            //         obj = document.getElementById("content").value;
+            //         console.log(obj);
+            //         // $.ajax({
+            //         //     type: 'post',
+            //         //     url: "/msg/usermsg",
+            //         //     dataType: 'json',
+            //         //     data: {
+            //         //         msg: obj
+            //         //     },
+            //         //     success: function (response) {
+            //         //         var result = response.msg;
+            //         //         console.log(response);
+            //         //         if(result =="OK")
+            //         //             window.alert("保存成功");
+            //         //         else
+            //         //             window.alert("保存失败");
+            //         //     }
+            //         // })
+            //     })
+            //     $('#down_btn').click(function () {
+            //         var obj = document.getElementById("content");
+            //         // $.ajax({
+            //         //     type: 'post',
+            //         //     url: "/msg/getmsg",
+            //         //     dataType: 'json',
+            //         //     data: {
+            //         //     },
+            //         //     success: function (response) {
+            //         //         var result = response.msg;
+            //         //         var data = response.data[0];
+            //         //         console.log(response);
+            //         //         console.log("data = "+data);
+            //         //         if(result =="OK"){
+            //         //             testEditor.setSelection({line:0, ch:0}, {line:100000, ch:0});
+            //         //             testEditor.replaceSelection(data);
+            //         //         }
+            //         //         else
+            //         //             console.log("error");
+            //         //     }
+            //         // })
+            //     })
+            // })
+        }else {
+            window.location.href="/ToLogin"
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>重新上传文件</title>
+    <script src="../../static/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(function (){
+            //绑定
+            $("#upload_button").click(function upload(){
+                alert("okk");
+                //从表单中获取文件生成FormData对象(表单中第一项)
+                var formData = new FormData();
+                var userId = $("#userId").val();
+                var docName = $("#docName").val();
+                //将用户id与文档id加入formData中
+                formData.append("file",document.getElementById("file").files[0]);
+                formData.append("userId",userId);
+                formData.append("docName",docName);
+                $.ajax({
+                    type:"post",
+                    url:"http://localhost:8080/upload",
+                    async:true,
+                    data:formData,
+                    /**
+                     *必须false才会自动加上正确的Content-Type
+                     */
+                    contentType: false,
+                    /**
+                     * 必须false才会避开jQuery对 formdata 的默认处理
+                     * XMLHttpRequest会对 formdata 进行正确的处理
+                     */
+                    processData: false,
+                    success:function (data){
+                        //看看客户端回传的数据
+                        console.log(data);
+                    }
+
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+    <form action="" method="post" id="uploadFile" enctype="multipart/form-data">
+        用户id：<input type="text" name="userId" id="userId"/></br>
+        文档id：<input type="text" name="docName" id="docName"/></br>
+        上传文档：<input type="file" name="file" id="file"/></br>
+        <input type="button" value="上传吧小伙子！" id="upload_button"/>
+    </form>
+</body>
+</html>

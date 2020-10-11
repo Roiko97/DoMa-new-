@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace ="com.scholat.doma.dao.UserDao">
+    <resultMap id="userchat" type="com.scholat.doma.entity.User">
+        <result property="userName" column="user_name" javaType="String"/>
+        <result property="userId" column="user_id" javaType="String"/>
+    </resultMap>
+
+    <select id="SelectUser"  resultMap="userchat">
+        SELECT *
+        FROM users
+        <where>
+            <if test="flag == 1">
+                user_name LIKE #{userName}
+            </if>
+        </where>
+    </select>
+
+    <select id="SelectUserById" resultMap="userchat" resultType="user">
+        SELECT * FROM users WHERE user_id = #{userId}
+    </select>
+
+    <select id="SelectUserByName" resultMap="userchat" resultType="user">
+        SELECT * FROM users WHERE user_name = #{userName}
+    </select>
+
+    <insert id="InsertUser" parameterType="String">
+        INSERT INTO users(user_name, account,password,user_id)
+        VALUES (#{userName},#{account},#{password},#{userId})
+    </insert>
+
+    <update id="UpdateUserName" parameterType="String">
+        UPDATE users
+        SET user_name = #{newUserName}
+        WHERE user_id =#{userId}
+    </update>
+
+    <select id="SelectUsersByAccount" resultType="user" resultMap="userchat">
+    SELECT * FROM users WHERE account = #{account}
+    </select>
+</mapper>

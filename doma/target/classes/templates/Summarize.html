@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>主页</title>
+    <link rel="shortcut icon" href="../static/src/favicon.ico">
+    <link href="css/bootstrap.css?v=3.3.6" rel="stylesheet">
+
+    <link href="css/nav.css" rel="stylesheet">
+    <link href="css/summarize.css" rel="stylesheet">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/echarts.min.js"></script>
+</head>
+
+<body>
+    <!--右侧内容开始-->
+    <div class="main" id="main">
+        <div class="flex-banner">
+            <div class="btn-group">
+                <button class="btn btn-default" disabled><span class="glyphicon glyphicon-arrow-up" ></span></button>
+                <a href="/Development"><button class="btn btn-default"  ><span
+                        class="glyphicon glyphicon-arrow-down" ></span></button></a>
+            </div>
+        </div>
+        <div class="main-content">
+            <nav class="nav-top"><button class="btn btn-info btn-bg pull-left nav-btn" onclick="navStatus()"><span
+                        class="glyphicon glyphicon-th-list"></span>导航</button><select class="title-select hidden"
+                    onchange="amendTeam(this)">
+                </select>
+                <div class="pull-right nav-top-right"><a class="btn" onclick="showInfo()"><span
+                            class="glyphicon glyphicon-user"></span></a>
+                </div>
+            </nav>
+            <nav class="navbar-left hidden" role="navigation">
+                <div class="left-nav">
+                    <ul class="nav">
+                        <hr>
+                        <li><span class="glyphicon glyphicon-home"></span><a href="/Summarize"
+                        >主页</a></li>
+                        <br>
+                        <li><span class="glyphicon glyphicon-console"></span><a href="/Development"
+                        >开发模式</a></li>
+                        <br>
+                        <li><span class="glyphicon glyphicon-console"></span><a href="/Communicate"
+                        >交流开发</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="content-main">
+                <div class="content-header">
+                    <div class="header">
+                        <p class="h1 header-title">面向大学生,基于学术论文研究的系统</p>
+                        <p class="h4 header-info">在这里系统上,你能够协同解决一些学术难题，Generate ideas<br>
+                            并且只要你仔细阅读,你将会感觉自己能够博士毕业！</p>
+                    </div>
+                    <div class="list">
+                        <a class="list-a" href="/ToLogin">注册账号，登录系统，学术起飞</a>
+                        <img src="src/left.png" alt="右箭头">
+                        <a class="list-a" href="/Development">创建团队，邀请小盆友，蹭个一座</a>
+                        <img src="src/left.png" alt="右箭头">
+                        <a class="list-a" href="/Communicate">上传论文、阅读论文，发表感想，交流感想，一起高产</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="dataModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">数据分析图</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="echat" style="width: 70vw;height: 80vh;"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--右侧内容结束-->
+    <script src="js/nav.js"></script>
+    <script type="text/javascript">
+        var user=getCookie()
+        if(user!=undefined){
+
+        }else {
+            window.location.href="/ToLogin"
+        }
+    </script>
+</body>
+
+</html>

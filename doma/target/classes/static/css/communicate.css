@@ -1,0 +1,151 @@
+body {
+    background-color: #f0f0f0;
+    height:100vh;
+}
+
+.content-main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top:7vh;
+    padding-top:1vh;
+    padding-bottom:2vh;
+}
+
+.content-header {
+    width: 62.5%;
+    height:auto;
+    padding: 0.5%;
+    margin: 0 auto;
+    margin-top: 2%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: #cccccc 0px 5px 10px;
+}
+.alert{
+    position: absolute;
+    margin-left:8%;
+    width: 53.5%;
+}
+.item {
+    background-color: white;
+    border-radius: 5px;
+    padding: 25px;
+    width: 30%;
+    height:250px;
+    margin-left: 2.5%;
+    margin-top: 2%;
+    color: rgb(100, 118, 126);
+    box-shadow: #cccccc 0px 5px 10px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: stretch;
+    align-content: stretch;
+}
+.item-header{
+    width: 80%;
+    height:30px;
+}
+.item-body{
+    width: 100%;
+    height:140px;
+    word-wrap:break-word;
+    overflow: auto;
+}
+.item-footer{
+    width: 100%;
+    height:30px;
+    padding-top:10px;
+}
+
+.item-title {
+    font-weight: bolder;
+}
+
+.item-title,
+.item-author {
+    color: rgb(100, 118, 126);
+}
+
+.item-news {
+    width: 100%;
+    text-indent:2em;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.item-title,
+.item-author strong {
+    color: rgb(100, 118, 126);
+}
+
+textarea {
+    resize: none;
+}
+
+.top-label {
+    width: 100%;
+    margin: 0%;
+    border: 1px #cccccc solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.bottom-input {
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+    margin: 0%;
+}
+
+.input-group-addon,
+.top-label {
+    background-color: #ffffff !important;
+    color: rgb(52, 58, 71);
+}
+
+.page {
+    margin-top: 3%;
+}
+
+/* 
+.reply{
+    width:100%;
+    background-color: rgb(226, 226, 226);
+}
+.reply-send{
+    padding:1%;
+}
+.reply-group{
+    display: flex;
+    flex-direction: column;
+    padding:0.5%;
+}
+.reply-group-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(155, 161, 161);
+}
+.reply-name,.reply-info,.reply-time{
+    word-break: break-all;
+    margin:auto;
+}
+.reply-name{
+    width:7%;
+}
+.reply-info{
+    width:80%;
+    color: black;
+}
+.reply-time{
+    width:10%;
+}
+
+.reply-btn{
+    margin:1% 2%;
+} */

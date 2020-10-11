@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--注意按需求修改此处的命名空间和下面的crud—id -->
+<mapper namespace ="com.scholat.doma.dao.DocInfoDao">
+    <resultMap id="DocInfo" type="com.scholat.doma.entity.DocInfo">
+        <result column="user_id" property="userId"/>
+        <result column="doc_id" property="docId"/>
+        <result column="pub_time" property="pubTime"/>
+        <result column="doc_name" property="docName"/>
+        <result column="recommend" property="recommend"/>
+        <result column="style" property="style"/>
+        <result column="address" property="address"/>
+        <result column="exist_ann" property="existAnn"/>
+        <result column="content" property="content"/>
+    </resultMap>
+    <insert id="createDocInfo">
+        INSERT INTO docinfo VALUES(#{userId},#{docId},#{pubTime},#{docName},
+        #{recommend},#{style},#{address},#{existAnn},#{content})
+</insert>
+    <select id="getContent" resultType="string">
+SELECT content FROM docinfo WHERE doc_id = #{docId}
+</select>
+    <select id="getStyle" resultType="string">
+SELECT style FROM docinfo WHERE doc_id = #{docId}
+</select>
+    <select id="getRecommend" resultType="integer">
+SELECT recommend FROM docinfo WHERE doc_id = #{docId}
+</select>
+    <select id="getDocInfo" resultMap="DocInfo">
+SELECT * FROM docinfo WHERE doc_id = #{docId}
+</select>
+    <select id="getAddress" resultType="string">
+        SELECT address FROM docinfo WHERE doc_id = #{docId}
+</select>
+    <delete id="deleteDocInfo">
+DELETE FROM docinfo WHERE doc_id = #{docId}
+</delete>
+    <update id="updataContent">
+UPDATE docinfo SET content = #{content} WHERE doc_id = #{docId}
+</update>
+    <update id="updateStyle">
+UPDATE docinfo SET style = #{style} WHERE doc_id = #{docId}
+</update>
+    <update id="updateRecommend">
+UPDATE docinfo SET recomment = #{recommend} WHERE doc_id = #{docId}
+</update>
+    <update id="updateExistAnn">
+UPDATE docinfo SET exist_ann = #{existAnn} WHERE doc_id = #{docId}
+</update>
+</mapper>

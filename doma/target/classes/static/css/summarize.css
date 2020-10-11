@@ -1,0 +1,128 @@
+body {
+    background-image: url("../src/summarize-bg.jpg");
+    background-color: #616161;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.main-content {
+    width: 100%;
+    height: auto;
+    margin-top: 7vh;
+}
+
+.content-main {
+    position: relative;
+    width: 100%;
+}
+
+.content-header {
+    height: auto;
+    width: 100%;
+    text-align: left;
+    padding: 15% 0 0 15%;
+}
+
+.header {
+    width: 100%;
+    color: white;
+}
+
+.header-title {
+    font-weight: bold;
+}
+
+.header-info {
+    line-height: 1.5em;
+}
+
+.made {
+    color: white;
+    background-color: darkmagenta;
+}
+
+.made:focus {
+    color: white;
+    background-color: rgb(117, 2, 117);
+}
+
+.made:hover {
+    color: white;
+    background-color: rgb(117, 2, 117);
+}
+
+.content {
+    width: 70%;
+    margin: 2% 15%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.group {
+    width: 90%;
+    margin-left: 5%;
+    border: 1px solid lightgray;
+}
+
+.group,
+.group-title {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.group-title {
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    background-color: rgb(114, 231, 222);
+}
+
+.list-main {
+    margin-top: 4%;
+}
+
+.tip {
+    color: rgb(206, 205, 205);
+    margin: 2%;
+}
+
+.list {
+    margin-top: 5%;
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    widows: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.list * {
+    margin: auto 0;
+}
+
+.list-a {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.list-a:hover {
+    text-decoration: none;
+    color: #39f;
+}
+
+.modal-dialog {
+    width: 80vw;
+    overflow: hidden;
+}
+
+.modal-header {
+    background-color: #39f;
+    color: white;
+}

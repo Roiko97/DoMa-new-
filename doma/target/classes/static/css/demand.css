@@ -1,0 +1,131 @@
+body {
+    background-color:#f0f0f0;
+}
+
+.main-content {
+    width: 100%;
+    height: auto;
+    margin-top: 7vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    padding:0;
+}
+.thumbnail{
+    width:18%;
+    height: 35vh;
+    margin-left:2%;
+    padding:0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: white;
+    -webkit-box-shadow: #b0bec9 0px 5px 10px;
+            box-shadow: #b0bec9 0px 5px 10px;
+}
+.thumbnail:hover{
+    margin-left:3.25%;
+    height: 37vh;
+    width:20%;
+    padding:0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.thumbnail img{
+    width:100%;
+    height: 70%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.caption{
+    height:50%;
+    width: 100%;
+}
+.item1,
+.item2,
+.item3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: relative;
+    width: 100%;
+    margin:0;
+    height:50vh;
+    padding-left:10%;
+}
+
+.item1 {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #b0bec9;
+}
+
+.item2 {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #b0bec9;
+}
+
+.item3 {
+    background-color: #f0f0f0;
+}
+
+.title {
+    font-weight: bolder;
+    color: rgb(59, 83, 97);
+    margin:1% 0;
+}
+
+.process {
+    padding:0.5% 1%;
+    margin: 0 0 0 0%;
+    border-top: 1px solid rgb(218, 169, 114);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+}
+
+.lock {
+    height: 50vh;
+    background-color: rgba(224, 224, 224, 0.466);
+    filter: Alpha(Opacity=80);
+    opacity: 0.8;
+    width: 100%;
+    position: absolute;
+    top: 0vh;
+    left: 0;
+    border-top: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.refresh-lock{
+    filter: Alpha(Opacity=80);
+    width:10%;
+    opacity: 0.8;
+    position: absolute;
+    top: 0vh;
+    left: 0;
+}
+.refresh-lock img{
+    width:25%;
+}
+.lock img {
+    width:2.5%;
+    position: absolute;
+    top:0;
+    left:0;
+}
